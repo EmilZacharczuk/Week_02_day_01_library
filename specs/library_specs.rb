@@ -44,4 +44,24 @@ class TestLibrary < MiniTest::Test
   def test_returning_book_renting_details_by_title
     assert_equal({student_name: "Jeff", date: "01/12/16"}, @library.returning_book_renting_details_by_title("lord_of_the_rings"))
   end
+
+  def test_adding_book_by_book_title
+
+    assert_equal([{
+    title: "lord_of_the_rings",
+    rental_details: {
+     student_name: "Jeff",
+     date: "01/12/16"
+    }
+  },{
+    title: "lord_of_the_rings",
+    rental_details: {
+      student_name: " ",
+      date: " "
+    }}], @library.adding_book_by_book_title({
+    title: "lord_of_the_rings",
+    rental_details: {
+      student_name: " ",
+      date: " "}}))
+  end
 end

@@ -26,4 +26,9 @@ class Library
       end
     end
   end
+
+  def adding_book_by_book_title(new_book)
+    @book.push(new_book)
+    return @book
+  end
 end
