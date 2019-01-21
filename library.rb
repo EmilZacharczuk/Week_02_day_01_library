@@ -10,4 +10,12 @@ class Library
   def books
     return @book
   end
+
+  def returning_book_by_title(title)
+    for book in @book
+      if book[:title] == title
+        return book
+      end
+    end
+  end
 end
